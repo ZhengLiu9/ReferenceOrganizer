@@ -18,9 +18,12 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-var flare = 
-{
+
+
+
+var flare = {
  "name": "flare",
+ "url":"http://google.com",
  "abstract": "radiation is a good thing but we can not always use it.radiation is a good thing but we can not always use it.radiation is a good thing but we can not always use it.radiation is a good thing but we can not always use it.radiation is a good thing but we can not always use it.radiation is a good thing but we can not always use it.radiation is a good thing but we can not always use it.",
  "children": [
       {"name": "AgglomerativeCluster", "size": 3938,"abstract": "radiation is a good thing but we can not always use it.radiation is a good thing but we can not always use it.radiation is a good thing but we can not always use it.radiation is a good thing but we can not always use it.radiation is a good thing but we can not always use it.radiation is a good thing but we can not always use it.radiation is a good thing but we can not always use"},
@@ -64,6 +67,7 @@ function update(source) {
       .attr("class", "node")
       .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
       .on("click", click)
+      .on("dblclick", function(d) { window.open(d.url); })
       .on("mouseover", mouseover)
       .on("mouseout", mouseout);
 
